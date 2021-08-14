@@ -1,0 +1,767 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="天元の" href="https://github.com/yuanyiyuan/yuanyiyuan.github.io.git/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="天元の" href="https://github.com/yuanyiyuan/yuanyiyuan.github.io.git/atom.xml" />
+<link rel="alternate" type="application/json" title="天元の" href="https://github.com/yuanyiyuan/yuanyiyuan.github.io.git/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="https://github.com/yuanyiyuan/yuanyiyuan.github.io.git/STM32CubeMx%E7%A7%BB%E6%A4%8Dfinsh%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">
+
+
+
+  <title>
+STM32CubeMx移植RT-Thread的RTOS和finsh步骤和解决办法 |
+Tian yuan = 天元の = 宇宙中的每一粒尘埃都有着迷人的故事</title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">STM32CubeMx移植RT-Thread的RTOS和finsh步骤和解决办法
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2021-07-30 09:37:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-07-30T09:37:00+08:00">2021-07-30</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Tian yuan</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giciundwu5j20zk0m8n9e.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeudstjqj20zk0m8k3r.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclx29mstj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipet4bz0yj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclwrdwyaj20zk0m8are.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclize41wj20zk0m87gk.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="https://github.com/yuanyiyuan/yuanyiyuan.github.io.git/STM32CubeMx%E7%A7%BB%E6%A4%8Dfinsh%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="~元~">
+    <meta itemprop="description" content="宇宙中的每一粒尘埃都有着迷人的故事, ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="天元の">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p><strong>STM32CubeMx移植RT-Thread的RTOS和finsh步骤和解决办法</strong><br>    移植的步骤</p>
+<pre><code>一. 先点开STM32CubeMx
+    ![](D:\new\program\source\_posts\photo\0.png)
+二. 创建项目
+    ![](D:\new\program\source\_posts\photo\1.png)
+    选择对应芯片的型号
+    ![](D:\new\program\source\_posts\photo\2.png)
+    添加RTOS
+    ![](D:\new\program\source\_posts\photo\3.png)
+    选择RTOS所需的功能
+    ![](D:\new\program\source\_posts\photo\4.png)
+    因为要移植finsh,所以需要串口UART
+    ![](D:\new\program\source\_posts\photo\5.png)
+    点击则自动生成代码，然后打开keil，这样STM32CubeMx就生成了对应的代码
+三. keil打开，可看到如下
+    ![](D:\new\program\source\_posts\photo\6.png)
+        存在
+            |--&gt;  Middlewares/RT-Thread/RTOS/shell
+            |--&gt;  Middlewares/RT-Thread/RTOS/kernel
+        里面即为对应RTOS选择的功能的库
+    我们编译便发现有error ，接下来我们要修改error
+    1. 打开 stm32xxxx_it.c
+    ![](D:\new\program\source\_posts\photo\7.png)
+    2. 将里面的 void HardFault_Handler(void) 函数给屏蔽掉
+    ![](D:\new\program\source\_posts\photo\8.png)
+·······································································
+    3. 打开  Middlewares/RT-Thread/RTOS/kernel 里的board.c 
+    ![](D:\new\program\source\_posts\photo\9.png)   
+    4. 将 rt_hw_board_init() 函数里面的  SystemClock_Config(); 和 HAL_Init(); 给屏蔽掉  
+    ![](D:\new\program\source\_posts\photo\10.png)  
+            因为main主函数里已经有上面的那两个函数
+            &lt; 注意： 主函数里面一定是要 HAL_Init()函数在前，SystemClock_Config();在后面 &gt;
+·······································································
+    【若用下面方法移植，则不需要3.4.的步骤
+                        不需要通过STM32CubeMx来移植】
+    &lt;只要是keil的任何项目，只要对应芯片可以，即可用keil来RTOS移植&gt;
+·······································································
+    3. 在keil里面找到下面的图表，然后点开
+    ![](D:\new\program\source\_posts\photo\13.png)
+    4. 选择RTOS，选择RTOS对应的功能 --&gt; 点击ok
+    ![](D:\new\program\source\_posts\photo\11.png)
+    5. 出现下图则说明移植完毕
+    ![](D:\new\program\source\_posts\photo\12.png)
+·······································································
+四. 到这里，如果选择了shell的功能，那一定会有一个错误，即为缺少rt_hw_console_getchar函数的error
+    这时候，我们只要移植官网对应的解决办法就好
+    but , 下面即为已OK的，直接移植到一个项目即可
+    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br></pre></td><td class="code"><pre><span class="line">Finsh_Driver.c</span><br><span class="line">    |--&gt;</span><br><span class="line"></span><br><span class="line">        #include &quot;Finsh_Driver.h&quot;</span><br><span class="line">        #include &quot;usart.h&quot;</span><br><span class="line"></span><br><span class="line">        #define USART_TX_Pin GPIO_PIN_9</span><br><span class="line">        #define USART_RX_Pin GPIO_PIN_10</span><br><span class="line"></span><br><span class="line">        static UART_HandleTypeDef UartHandle;</span><br><span class="line">        static struct rt_semaphore shell_rx_sem; /* 定义一个静态信号量 */</span><br><span class="line">        rt_uint8_t uart_rx_buf[UART_RX_BUF_LEN] = &#123;0&#125;;</span><br><span class="line">        struct ringbuffer uart_rxcb; /* 定义一个 ringbuffer cb */</span><br><span class="line"></span><br><span class="line">        void TSHELL_GPIO_Init(UART_HandleTypeDef *huart)</span><br><span class="line">        &#123;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        //&#123;</span><br><span class="line">        //    GPIO_InitTypeDef GPIO_InitStruct = &#123;0&#125;;</span><br><span class="line">        //    if (huart-&gt;Instance == USART2)</span><br><span class="line">        //    &#123;</span><br><span class="line">        //        __HAL_RCC_USART2_CLK_ENABLE();</span><br><span class="line"></span><br><span class="line">        //        __HAL_RCC_GPIOA_CLK_ENABLE();</span><br><span class="line">        //        /**USART2 GPIO Configuration</span><br><span class="line">        //        PA2     ------&gt; USART2_TX</span><br><span class="line">        //        PA3     ------&gt; USART2_RX</span><br><span class="line">        //        */</span><br><span class="line">        //        GPIO_InitStruct.Pin = USART_TX_Pin | USART_RX_Pin;</span><br><span class="line">        //        GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;</span><br><span class="line">        //        GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;</span><br><span class="line">        //        HAL_GPIO_Init(GPIOA, &amp;GPIO_InitStruct);</span><br><span class="line">        //    &#125;</span><br><span class="line">        //&#125;</span><br><span class="line"></span><br><span class="line">        /* 初始化串口，中断方式 */</span><br><span class="line">        static int FinSHInit(void)</span><br><span class="line">        &#123;</span><br><span class="line">            /* 初始化串口接收 ringbuffer  */</span><br><span class="line">            ringbuffer_init(&amp;uart_rxcb, uart_rx_buf, UART_RX_BUF_LEN);</span><br><span class="line"></span><br><span class="line">            /* 初始化串口接收数据的信号量 */</span><br><span class="line">            rt_sem_init(&amp;(shell_rx_sem), &quot;shell_rx&quot;, 0, 0);</span><br><span class="line"></span><br><span class="line">            TSHELL_GPIO_Init(&amp;huart1);</span><br><span class="line"></span><br><span class="line">            /* 初始化串口参数，如波特率、停止位等等 */</span><br><span class="line">            UartHandle.Instance = FIN_SHELL_UART;</span><br><span class="line">            UartHandle.Init.BaudRate = 115200;</span><br><span class="line">            UartHandle.Init.HwFlowCtl = UART_HWCONTROL_NONE;</span><br><span class="line">            UartHandle.Init.Mode = UART_MODE_TX_RX;</span><br><span class="line">            UartHandle.Init.OverSampling = UART_OVERSAMPLING_16;</span><br><span class="line">            UartHandle.Init.WordLength = UART_WORDLENGTH_8B;</span><br><span class="line">            UartHandle.Init.StopBits = UART_STOPBITS_1;</span><br><span class="line">            UartHandle.Init.Parity = UART_PARITY_NONE;</span><br><span class="line"></span><br><span class="line">            /* 初始化串口引脚等 */</span><br><span class="line">            if (HAL_UART_Init(&amp;UartHandle) != HAL_OK)</span><br><span class="line">            &#123;</span><br><span class="line">                while (1)</span><br><span class="line">                    ;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            /* 中断配置 */</span><br><span class="line">            __HAL_UART_ENABLE_IT(&amp;UartHandle, UART_IT_RXNE);</span><br><span class="line">            HAL_NVIC_EnableIRQ(FIN_SHELL_IRQn);</span><br><span class="line">            HAL_NVIC_SetPriority(FIN_SHELL_IRQn, 3, 3);</span><br><span class="line"></span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">        INIT_BOARD_EXPORT(FinSHInit);</span><br><span class="line"></span><br><span class="line">        /* 移植控制台，实现控制台输出, 对接 rt_hw_console_output */</span><br><span class="line">        void rt_hw_console_output(const char *str)</span><br><span class="line">        &#123;</span><br><span class="line">            rt_size_t i = 0, size = 0;</span><br><span class="line">            char a = &#x27;\r&#x27;;</span><br><span class="line"></span><br><span class="line">            __HAL_UNLOCK(&amp;UartHandle);</span><br><span class="line"></span><br><span class="line">            size = rt_strlen(str);</span><br><span class="line">            for (i = 0; i &lt; size; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                if (*(str + i) == &#x27;\n&#x27;)</span><br><span class="line">                &#123;</span><br><span class="line">                    HAL_UART_Transmit(&amp;UartHandle, (uint8_t *)&amp;a, 1, 1);</span><br><span class="line">                &#125;</span><br><span class="line">                HAL_UART_Transmit(&amp;UartHandle, (uint8_t *)(str + i), 1, 1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        /* 移植 FinSH，实现命令行交互, 需要添加 FinSH 源码，然后再对接 rt_hw_console_getchar */</span><br><span class="line">        /* 中断方式 */</span><br><span class="line">        char rt_hw_console_getchar(void)</span><br><span class="line">        &#123;</span><br><span class="line">            char ch = 0;</span><br><span class="line"></span><br><span class="line">            /* 从 ringbuffer 中拿出数据 */</span><br><span class="line">            while (ringbuffer_getchar(&amp;uart_rxcb, (rt_uint8_t *)&amp;ch) != 1)</span><br><span class="line">            &#123;</span><br><span class="line">                rt_sem_take(&amp;shell_rx_sem, RT_WAITING_FOREVER);</span><br><span class="line">            &#125;</span><br><span class="line">            return ch;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        /* uart 中断 */</span><br><span class="line">        void TSHELL_IRQHandler(void)</span><br><span class="line">        &#123;</span><br><span class="line">            int ch = -1;</span><br><span class="line">            rt_base_t level;</span><br><span class="line">            /* enter interrupt */</span><br><span class="line">            rt_interrupt_enter(); //在中断中一定要调用这对函数，进入中断</span><br><span class="line"></span><br><span class="line">            if ((__HAL_UART_GET_FLAG(&amp;(UartHandle), UART_FLAG_RXNE) != RESET) &amp;&amp;</span><br><span class="line">                (__HAL_UART_GET_IT_SOURCE(&amp;(UartHandle), UART_IT_RXNE) != RESET))</span><br><span class="line">            &#123;</span><br><span class="line">                while (1)</span><br><span class="line">                &#123;</span><br><span class="line">                    ch = -1;</span><br><span class="line">                    if (__HAL_UART_GET_FLAG(&amp;(UartHandle), UART_FLAG_RXNE) != RESET)</span><br><span class="line">                    &#123;</span><br><span class="line">                        ch = UartHandle.Instance-&gt;RDR &amp; 0xff;</span><br><span class="line">                    &#125;</span><br><span class="line">                    if (ch == -1)</span><br><span class="line">                    &#123;</span><br><span class="line">                        break;</span><br><span class="line">                    &#125;</span><br><span class="line">                    /* 读取到数据，将数据存入 ringbuffer */</span><br><span class="line">                    ringbuffer_putchar(&amp;uart_rxcb, ch);</span><br><span class="line">                &#125;</span><br><span class="line">                rt_sem_release(&amp;shell_rx_sem);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            /* leave interrupt */</span><br><span class="line">            rt_interrupt_leave(); //在中断中一定要调用这对函数，离开中断</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">Finsh_Driver.h</span><br><span class="line">|--&gt;</span><br><span class="line"></span><br><span class="line">    #ifndef __FINSH_DRIVER_H__</span><br><span class="line">    #define __FINSH_DRIVER_H__</span><br><span class="line"></span><br><span class="line">    #include &lt;rtthread.h&gt;</span><br><span class="line">    #include &quot;ringbuffer.h&quot;</span><br><span class="line">    // tShell</span><br><span class="line">    #define SHELL_USING_UART1 1</span><br><span class="line">    #define SHELL_USING_UART2 0</span><br><span class="line">    #define SHELL_USING_UART3 0</span><br><span class="line">    #define SHELL_USING_UART4 0</span><br><span class="line">    #define SHELL_USING_UART5 0</span><br><span class="line">    #define SHELL_USING_UART6 0</span><br><span class="line">    #define SHELL_USING_UART7 0</span><br><span class="line">    #define SHELL_USING_UART8 0</span><br><span class="line"></span><br><span class="line">    #define UART_RX_BUF_LEN 16</span><br><span class="line"></span><br><span class="line">    #if SHELL_USING_UART1</span><br><span class="line">    #define FIN_SHELL_UART USART1              // * tShell 串口</span><br><span class="line">    #define FIN_SHELL_IRQn USART1_IRQn          // * tShell 中断号</span><br><span class="line">    #define TSHELL_IRQHandler USART1_IRQHandler // * tShell 中断服务函数</span><br><span class="line">    #endif</span><br><span class="line">    #if SHELL_USING_UART2</span><br><span class="line">    #define FIN_SHELL_UART USART2              // * tShell 串口</span><br><span class="line">    #define FIN_SHELL_IRQn USART2_IRQn          // * tShell 中断号</span><br><span class="line">    #define TSHELL_IRQHandler USART2_IRQHandler // * tShell 中断服务函数</span><br><span class="line">    #endif</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    #define FIN_SHELL_BAUDRATE 115200 // * tShell 波特率</span><br><span class="line"></span><br><span class="line">    #endif</span><br></pre></td></tr></table></figure>
+
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ringbuff.c
+    |--&gt;
+
+        #include &quot;ringbuffer.h&quot;
+
+        /**
+        * @brief           获取 ringbuffer 状态
+        * 
+        * @param rb        缓冲区对象
+        * 
+        * @retval           ringbuffer 枚举
+        *                      空  :   RINGBUFFER_EMPTY
+        *                      满  :   RINGBUFFER_FULL
+        *                      半满:   RINGBUFFER_HALFFULL
+        * @date 2021-05-16
+        */
+        inline enum ringbuffer_state ringbuffer_status(struct ringbuffer *rb)
+        &#123;
+            if (rb-&gt;read_index == rb-&gt;write_index)
+            &#123;
+                if (rb-&gt;read_mirror == rb-&gt;write_mirror)
+                &#123;
+                    return RINGBUFFER_EMPTY;
+                &#125;
+                else
+                &#123;
+                    return RINGBUFFER_FULL;
+                &#125;
+            &#125;
+            return RINGBUFFER_HALFFULL;
+        &#125;
+
+        /**
+        * @brief           获取缓冲区中数据大小
+        * 
+        * @param rb        缓冲区对象
+        * 
+        * @retval          缓冲区中现有数据
+        * 
+        * @date 2021-05-16
+        */
+        uint32_t ringbuffer_data_len(struct ringbuffer *rb)
+        &#123;
+            switch (ringbuffer_status(rb))
+            &#123;
+            case RINGBUFFER_EMPTY:
+                return 0;
+            case RINGBUFFER_FULL:
+                return rb-&gt;buffer_size;
+            case RINGBUFFER_HALFFULL:
+            default:
+                if (rb-&gt;write_index &gt; rb-&gt;read_index)
+                &#123;
+                    return rb-&gt;write_index - rb-&gt;read_index;
+                &#125;
+                else
+                &#123;
+                    return rb-&gt;buffer_size - (rb-&gt;read_index - rb-&gt;write_index);
+                &#125;
+            &#125;;
+        &#125;
+
+        /**
+        * @brief           初始化 ringbuffer 实例
+        * 
+        * @param rb        缓冲区对象
+        * @param pool      缓冲区数组首地址
+        * @param size      缓冲区数组大小
+        * 
+        * 
+        * @date 2021-05-16
+        */
+        void ringbuffer_init(struct ringbuffer *rb,
+                            uint8_t *pool,
+                            int16_t size)
+        &#123;
+
+            /* 初始化读写索引 */
+            rb-&gt;read_mirror = rb-&gt;read_index = 0;
+            rb-&gt;write_mirror = rb-&gt;write_index = 0;
+
+            /* 配置缓冲区首地址 和 大小*/
+            rb-&gt;buffer_ptr = pool;
+            rb-&gt;buffer_size = ALIGN_DOWN(size, ALIGN_SIZE);
+        &#125;
+
+        /**
+        * @brief           缓冲区存入 1 字节
+        * 
+        * @param rb        缓冲区对象
+        * @param ch        存入缓冲区的数据
+        * 
+        * @retval          执行结果
+        *                      0:  error
+        *                      1:  succee
+        * @date 2021-05-16
+        */
+        uint32_t ringbuffer_putchar(struct ringbuffer *rb, const uint8_t ch)
+        &#123;
+            /* 缓冲区满 */
+            if (!ringbuffer_space_len(rb))
+                return 0;
+
+            rb-&gt;buffer_ptr[rb-&gt;write_index] = ch;
+
+            /* 翻转检测 */
+            if (rb-&gt;write_index == rb-&gt;buffer_size - 1)
+            &#123;
+                rb-&gt;write_mirror = ~rb-&gt;write_mirror;
+                rb-&gt;write_index = 0;
+            &#125;
+            else
+            &#123;
+                rb-&gt;write_index++;
+            &#125;
+
+            return 1;
+        &#125;
+
+        /**
+        * @brief           从缓冲区中读取 1 字节
+        * 
+        * @param rb        缓冲区实体
+        * @param ch        读取的字节
+        * 
+        * @retval          执行结果:
+        *                      0:  error
+        *                      1:  succee
+        * 
+        * @date 2021-05-16
+        */
+        uint32_t ringbuffer_getchar(struct ringbuffer *rb, uint8_t *ch)
+        &#123;
+            /* 缓存区为 NULL */
+            if (!ringbuffer_data_len(rb))
+                return 0;
+
+            /*存入字节 */
+            *ch = rb-&gt;buffer_ptr[rb-&gt;read_index];
+
+            if (rb-&gt;read_index == rb-&gt;buffer_size - 1)
+            &#123;
+                rb-&gt;read_mirror = ~rb-&gt;read_mirror;
+                rb-&gt;read_index = 0;
+            &#125;
+            else
+            &#123;
+                rb-&gt;read_index++;
+            &#125;
+
+            return 1;
+        &#125;
+    ringbuffer.h
+    |--&gt;
+
+        #ifndef __RINGBUFFER_H__
+        #define __RINGBUFFER_H__
+
+        #include &quot;stdint.h&quot;
+
+        #define ALIGN_SIZE 4 // 字节对齐
+        // * 返回对齐数
+        #define ALIGN_DOWN(size, align) ((size) &amp; ~((align)-1))
+
+        #define ringbuffer_space_len(rb) ((rb)-&gt;buffer_size - ringbuffer_data_len(rb))
+
+        struct ringbuffer
+        &#123;
+            uint8_t *buffer_ptr;
+
+            uint16_t read_mirror : 1;
+            uint16_t read_index : 15;
+            uint16_t write_mirror : 1;
+            uint16_t write_index : 15;
+
+            int16_t buffer_size;
+        &#125;;
+
+        enum ringbuffer_state
+        &#123;
+            RINGBUFFER_EMPTY,
+            RINGBUFFER_FULL,
+            /* half full is neither full nor empty */
+            RINGBUFFER_HALFFULL,
+        &#125;;
+
+        void ringbuffer_init(struct ringbuffer *rb, uint8_t *pool, int16_t size);
+
+        uint32_t ringbuffer_data_len(struct ringbuffer *rb);
+        enum ringbuffer_state ringbuffer_status(struct ringbuffer *rb);
+        uint32_t ringbuffer_getchar(struct ringbuffer *rb, uint8_t *ch);
+        uint32_t ringbuffer_putchar(struct ringbuffer *rb, const uint8_t ch);
+
+        #endif
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   
+    将上面两个 .c 和 .h 文件移植到对应项目里，这样那个error就被干掉了
+
+    这时，再次编译，就发现没有问题了，同时打开串口助手，发现会显示      
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+    \ | /
+    - RT -     Thread Operating System
+    / | \     3.1.3 build Jul 30 2021
+    2006 - 2019 Copyright by rt-thread team
+    msh &gt;
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+    OK，这样就RTOS移植成功，shell 和 finsh 也移植成功了
+</code></pre>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2021-07-30 11:39:41" itemprop="dateModified" datetime="2021-07-30T11:39:41+08:00">2021-07-30</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> Donate</button>
+  <p>Give me a cup of [coffee]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="~元~ WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="~元~ Alipay">
+        <p>Alipay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="~元~ PayPal">
+        <p>PayPal</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>~元~ <i class="ic i-at"><em>@</em></i>天元の
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="https://github.com/yuanyiyuan/yuanyiyuan.github.io.git/STM32CubeMx%E7%A7%BB%E6%A4%8Dfinsh%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" title="STM32CubeMx移植RT-Thread的RTOS和finsh步骤和解决办法">https://github.com/yuanyiyuan/yuanyiyuan.github.io.git/STM32CubeMx移植finsh错误的解决办法/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/OpenMv%E7%AC%94%E8%AE%B0/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclj9410cj20zk0m8h12.jpg" title="OpenMv笔记">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>OpenMv笔记</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/HAL/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipew28b65j20zk0m8hdt.jpg" title="HAL">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>HAL</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+      </div>
+      <div class="related panel pjax" data-title="Related">
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="~元~"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">~元~</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">11</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">5</span>
+        <span class="name">tags</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <a href="https://github.com/yuanyiyuan" title="https:&#x2F;&#x2F;github.com&#x2F;yuanyiyuan" class="item github"><i class="ic i-github"></i></a>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;twitter.com&#x2F;yourname"><i class="ic i-twitter"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yourname"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTE5ODc4NTU1NDQ=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1987855544"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20veW91cm5hbWU=" title="https:&#x2F;&#x2F;weibo.com&#x2F;yourname"><i class="ic i-weibo"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;about.me&#x2F;yourname"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>About</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>Posts</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>Archives</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>Categories</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>Tags</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/OpenMv%E7%AC%94%E8%AE%B0/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/HAL/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/STM32CubeMx%E7%A7%BB%E6%A4%8Dfinsh%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" title="STM32CubeMx移植RT-Thread的RTOS和finsh步骤和解决办法">STM32CubeMx移植RT-Thread的RTOS和finsh步骤和解决办法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/C%E8%AF%AD%E8%A8%80/" title="C语言">C语言</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/C%E8%AF%AD%E8%A8%80%E4%B9%8B%E8%BF%9B%E9%98%B6/" title="C语言之进阶">C语言之进阶</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/LINUX%E7%AF%87/" title="LINUX篇">LINUX篇</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/RT-thread__2/" title="RT-thread__2">RT-thread__2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Vscode%20quick/" title="VScode 快捷键">VScode 快捷键</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/HAL/" title="HAL">HAL</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/OpenMv%E7%AC%94%E8%AE%B0/" title="OpenMv笔记">OpenMv笔记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/arduino%E7%AC%94%E8%AE%B0/" title="arduino常见的库及其使用">arduino常见的库及其使用</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2021</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">~元~ @ Tian yuan</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<a href="https://github.com/amehime/hexo-theme-shoka">Shoka</a>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'STM32CubeMx移植finsh错误的解决办法/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

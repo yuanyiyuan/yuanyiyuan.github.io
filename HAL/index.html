@@ -1,0 +1,671 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="天元の" href="https://github.com/yuanyiyuan/yuanyiyuan.github.io.git/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="天元の" href="https://github.com/yuanyiyuan/yuanyiyuan.github.io.git/atom.xml" />
+<link rel="alternate" type="application/json" title="天元の" href="https://github.com/yuanyiyuan/yuanyiyuan.github.io.git/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="STM32_HAL" />
+
+
+<link rel="canonical" href="https://github.com/yuanyiyuan/yuanyiyuan.github.io.git/HAL/">
+
+
+
+  <title>
+HAL |
+Tian yuan = 天元の = 宇宙中的每一粒尘埃都有着迷人的故事</title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">HAL
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2021-07-31 18:42:47">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-07-31T18:42:47+08:00">2021-07-31</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Tian yuan</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclwrdwyaj20zk0m8are.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicitzannuj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicli9lfebj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclj9410cj20zk0m8h12.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclimtf7dj20zk0m8qav.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipew28b65j20zk0m8hdt.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="https://github.com/yuanyiyuan/yuanyiyuan.github.io.git/HAL/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="~元~">
+    <meta itemprop="description" content="宇宙中的每一粒尘埃都有着迷人的故事, ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="天元の">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <pre><code>一. GPIO
+    HAL_GPIO_ReadPin();           //读引脚状态
+    HAL_GPIO_WritePin();          //设置引脚高低电平
+    HAL_GPIO_TogglePin();         //对引脚取反
+
+    HAL_GPIO_EXIT_IRQHandler();        //gpio中断函数
+    HAL_GPIO_EXIT_Callback();          //gpio中断回调函数
+
+二. 串口
+    ················································································
+    USB_OTG_FS :[全速(full speed)--&gt; 12M]  
+    USB_OTG_HS :[高速(high speed)--&gt; 480M]  
+    LOW-speed  : 低速--&gt; 1.5Mb/s
+
+    D+/D- 上的上拉电阻是来指明 usb device 是 low 或 full/high设备
+        D+ 上拉说明是full/high设备
+        D- 上拉说明是low设备
+    
+    **[F1 F3系列需要外部上拉电阻判断低速和高速]**
+</code></pre>
+<hr>
+<hr>
+<h2 id="之后修改"><a href="#之后修改" class="headerlink" title="之后修改"></a>之后修改</h2><hr>
+<p>RCC  【使用 HSE/HSI 配置时钟】<br>        RCC 主要作用—时钟部分<br>            设置系统时钟 SYSCLK、<br>            设置 AHB 分频因子（决定 HCLK 等于多少）、<br>            设置 APB2 分频因子（决定 PCLK2 等于多少）、<br>            设置 APB1 分频因子（决定 PCLK1 等于多少）、<br>            设置各个外设的分频因子；<br>        <strong>控制 AHB、APB2 和 APB1 这三条总线时钟的开启、控制每个外设的时钟的开启</strong><br>        **对于SYSCLK、HCLK、PCLK2、PCLK1 这四个时钟的配置一般是：HCLK = SYSCLK=PLLCLK = 168M，PCLK1=HCLK/2 = 84M，PCLK1=HCLK/4 = 42M</p>
+<pre><code>    系统时钟:
+        HSE 高速外部时钟信号：
+            HSE 是高速的外部时钟信号，可以由有源晶振或者无源晶振提供，频率从 4-26MHZ 不等。当
+            使用有源晶振时，时钟从 OSC_IN 引脚进入，OSC_OUT 引脚悬空，当选用无源晶振时，时钟从
+            OSC_IN 和 OSC_OUT 进入，并且要配谐振电容。HSE 我们使用 25M 的无源晶振。如果我们使用
+            HSE 或者 HSE 经过 PLL 倍频之后的时钟作为系统时钟 SYSCLK，当 HSE 故障时候，不仅 HSE 会
+            被关闭，PLL 也会被关闭，此时高速的内部时钟时钟信号 HSI 会作为备用的系统时钟，直到 HSE
+            恢复正常，HSI=16M
+        锁相环 PLL：
+            PLL 的主要作用是对时钟进行倍频，然后把时钟输出到各个功能部件。PLL 有两个，一个是主PLL，另外一个是专用的 PLLI2S，他们均由 HSE 或者 HSI 提供时钟输入信号
+                主 PLL 有两路的时钟输出，第一个输出时钟 PLLCLK 用于系统时钟，
+                                        第二个输出用于 USB OTG FS 的时钟（48M）、RNG 和 SDIO 时钟（&lt;=48M）
+                专用的 PLLI2S 用于生成精确时钟，给 I2S 提供时钟
+
+            HSE 或者 HSI 经过 PLL 时钟输入分频因子 M（2~63）分频后，成为 VCO 的时钟输入，VCO 的时钟必须在 1~2M 之间，我们选择 HSE=25M 作为 PLL 的时钟输入，M 设置为 25，那么 VCO 输入时钟就等于 1M
+        系统时钟 SYSCLK：
+            系统时钟来源可以是：HSI、PLLCLK、HSE，具体的由时钟配置寄存器 RCC_CFGR 的 SW 位配置
+        AHB 总线时钟 HCLK：
+            系统时钟 SYSCLK 经过 AHB 预分频器分频之后得到时钟叫 AHB 总线时钟，即 HCLK，分频因子可以是:[1,2,4，8，16，64，128，256，512]，具体的由时钟配置寄存器 RCC_CFGR 的 HPRE 位设置
+            **片上大部分外设的时钟都是经过 HCLK 分频得到，至于 AHB 总线上的外设的时钟设置为多少，得等到我们使用该外设的时候才设置**
+        APB2 总线时钟 HCLK2：
+            APB2 总线时钟 PCLK2 由 HCLK 经过高速 APB2 预分频器得到，分频因子可以是:[1,2,4，8，16]，具体由时钟配置寄存器 RCC_CFGR 的 PPRE2 位设置
+            HCLK2 属于高速的总线时钟，片上高速的外设就挂载到这条总线上，比如全部的 GPIO、USART1、SPI1 等
+        APB1 总线时钟 HCLK1：
+            APB1 总线时钟 PCLK1 由 HCLK 经过低速 APB 预分频器得到，分频因子可以是:[1,2,4，8，16]，具体由时钟配置寄存器 RCC_CFGR 的 PPRE1 位设置
+            HCLK1 属于低速的总线时钟，最高为 42M，片上低速的外设就挂载到这条总线上，比如 USART2/3/4/5、SPI2/3，I2C1/2 等
+        RTC 时钟：
+            RTCCLK 时钟源可以是 HSE 1 MHz（HSE 由一个可编程的预分频器分频）、LSE 或者 LSI 时钟。
+            选择方式是编程 RCC 备份域控制寄存器 (RCC_BDCR) 中的 RTCSEL[1:0] 位和 RCC 时钟配置寄存器 (RCC_CFGR) 中的 RTCPRE[4:0] 位。所做的选择只能通过复位备份域的方式修改。我们通常的做法是由 LSE 给 RTC 提供时钟，大小为 32.768KHZ。LSE 由外接的晶体谐振器产生，所配的谐振电容精度要求高，不然很容易不起震
+        独立看门狗时钟：
+            独立看门狗时钟由内部的低速时钟 LSI 提供，大小为 32KHZ
+        I2S 时钟：
+            I2S 时钟可由外部的时钟引脚 I2S_CKIN 输入，也可由专用的 PLLI2SCLK 提供，具体的由 RCC时钟配置寄存器 ( RCC_CFGR) 的 I2SSCR 位配置
+    HAL库本身可直接配置时钟树来配置对应时钟的频率
+</code></pre>
+<p>中断：<br>        NVIC 是嵌套向量中断控制器，控制着整个芯片中断相关的功能，它跟内核紧密耦合，是内核里面的一个外设<br>    在配置中断的时候我们一般只用 ISER、ICER 和 IP 这三个寄存器<br>        |–&gt;  ISER 用来使能中断，ICER 用来失能中断，IP 用来设置中断优先级<br>        在 NVIC 有一个专门的寄存器：中断优先级寄存器 NVIC_IPRx（在 F407 中，x=0…981）用来配置外部中断的优先级，IPR 宽度为 8bit，原则上每个外部中断可配置的优先级为 0~255，数值越小，优先级越高<br>    如果有多个中断同时响应，抢占优先级高的就会抢占抢占优先级低的优先得到执行，如果抢占优先级相同，就比较子优先级</p>
+<pre><code>HAL库的中断：
+    HAL_NVIC_SetPriorityGrouping(uint32_t PriorityGroup)     //函数配置中断优先级分组
+    HAL_NVIC_SetPriority (IRQn_Type IRQn, uint32_t PreemptPriority, uint32_t SubPriority)      //函数配置具体外设中断通道的抢占优先级和子优先级
+            |--&gt; PreemptPriority：抢占优先级      SubPriority：子优先级     【具体的值要根据优先级分组来确定】
+    HAL_NVIC_EnableIRQ   //函数使能中断请求
+    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">typedef enum IRQn &#123;</span><br><span class="line">//Cortex-M4 处理器异常编号</span><br><span class="line">NonMaskableInt_IRQn = -14,</span><br><span class="line">MemoryManagement_IRQn = -12,</span><br><span class="line">BusFault_IRQn = -11,</span><br><span class="line">UsageFault_IRQn = -10,</span><br><span class="line">SVCall_IRQn = -5,</span><br><span class="line">DebugMonitor_IRQn = -4,</span><br><span class="line">PendSV_IRQn = -2,</span><br><span class="line">SysTick_IRQn = -1,</span><br><span class="line">//STM32 外部中断编号</span><br><span class="line">WWDG_IRQn = 0,</span><br><span class="line">PVD_IRQn = 1,</span><br><span class="line">TAMP_STAMP_IRQn = 2,</span><br><span class="line">// 限于篇幅，中间部分代码省略，具体的可查看库文件 stm32f4xx.h</span><br><span class="line">CRYP_IRQn = 79,</span><br><span class="line">HASH_RNG_IRQn = 80,</span><br><span class="line">FPU_IRQn = 81,</span><br><span class="line">&#125; IRQn_Type;</span><br></pre></td></tr></table></figure>
+EXTI—外部中断/事件控制器：
+    外部中断/事件控制器 (EXTI) 管理了控制器的 23 个中断/事件线。每个中断/事件线都对应有一个边沿检测器，可以实现输入信号的上升沿检测和下降沿的检测。
+    EXTI 可以实现对每个中断/事件线进行单独配置，可以单独配置为中断或者事件，以及触发事件的属性
+    ·····················································································
+    EXTI 可分为两大部分功能，一个是产生中断，另一个是产生事件 【这两个功能从硬件上有所不同】
+    EXTI 有 23 个中断/事件线，每个 GPIO 都可以被设置为输入线，占用 EXTI0 至 EXTI15，还有另外七根用于特定的外设事件，七根特定外设中断/事件线由外设触发
+
+    EXTI0 至 EXTI15 用于 GPIO，通过编程控制可以实现任意一个 GPIO 作为 EXTI 的输入源
+
+    使用 GPIO 之前必须开启 GPIO 端口的时钟；
+    调用 HAL_NVIC_SetPriority 和 HAL_NVIC_EnableIRQ 函数完成对按键 1、按键 2 优先级配置并使能中断通道
+    作为中断/时间输入线把 GPIO 配置为中断上升沿触发模式，这里不使用上拉或下拉，有外部电路完全决定引脚的状态
+    我们的目的是产生中断，执行中断服务函数，EXTI 选择中断模式，按键 1 使用下降沿触发方式，并使能 EXTI 线
+
+    eg:
+    中断处理函数
+        void KEY1_IRQHandler(void) &#123;
+        //确保是否产生了 EXTI Line 中断
+        if (__HAL_GPIO_EXTI_GET_IT(KEY1_INT_GPIO_PIN) != RESET) &#123;
+        // LED1 取反
+        LED1_TOGGLE;
+        //清除中断标志位
+        __HAL_GPIO_EXTI_CLEAR_IT(KEY1_INT_GPIO_PIN);
+        &#125; &#125;
+
+        当中断发生时，对应的中断服务函数就会被执行，我们可以在中断服务函数实现一些控制。一般为确保中断确实发生，我们会在中断服务函数调用中断标志位状态读取函数读取外设中断标志位并判断标志位状态
+
+
+    [__HAL_GPIO_EXTI_GET_IT 函数用来获取 EXTI 的中断标志位状态，如果 EXTI 线有中断发生函数返回“SET”否则返回“RESET”。实际上，__HAL_GPIO_EXTI_GET_IT 函数是通过读取EXTI_PR 寄存器值来判断 EXTI 线状态的,---------------&gt;执行任务后需要调用 __HAL_GPIO_EXTI_CLEAR_IT 函数清除 EXTI 线的中断标志位]
+
+    中断初始化配置函数：
+        &#123;
+        GPIO_InitTypeDef GPIO_InitStructure;
+        /* 开启按键 GPIO 口的时钟 */
+        KEY1_INT_GPIO_CLK_ENABLE();
+        KEY2_INT_GPIO_CLK_ENABLE();
+        /* 选择按键 1 的引脚 */
+        GPIO_InitStructure.Pin = KEY1_INT_GPIO_PIN;
+        /* 设置引脚为输入模式 */
+        GPIO_InitStructure.Mode = GPIO_MODE_IT_RISING;
+        /* 设置引脚不上拉也不下拉 */
+        GPIO_InitStructure.Pull = GPIO_NOPULL;
+        /* 使用上面的结构体初始化按键 */
+        HAL_GPIO_Init(KEY1_INT_GPIO_PORT, &amp;GPIO_InitStructure);
+        /* 配置 EXTI 中断源 到 key1 引脚、配置中断优先级 */
+        HAL_NVIC_SetPriority(KEY1_INT_EXTI_IRQ, 0, 0);
+        /* 使能中断 */
+        HAL_NVIC_EnableIRQ(KEY1_INT_EXTI_IRQ);
+
+        
+        /* 选择按键 2 的引脚 */
+        GPIO_InitStructure.Pin = KEY2_INT_GPIO_PIN;
+        /* 其他配置与上面相同 */
+        HAL_GPIO_Init(KEY2_INT_GPIO_PORT, &amp;GPIO_InitStructure);
+        /* 配置 EXTI 中断源 到 key1 引脚、配置中断优先级 */
+        HAL_NVIC_SetPriority(KEY2_INT_EXTI_IRQ, 0, 0);
+        /* 使能中断 */
+        HAL_NVIC_EnableIRQ(KEY2_INT_EXTI_IRQ);
+
+        &#125;
+    
+</code></pre>
+<p>SysTick 简介<br>        SysTick—系统定时器是属于 CM4 内核中的一个外设，内嵌在 NVIC 中<br>        系统定时器是一个 24bit 的向下递减的计数器，计数器每计数一次的时间为 1/SYSCLK，一般我们设置系统时钟 SYSCLK等于 168M。当重装载数值寄存器的值递减到 0 的时候，系统定时器就产生一次中断，以此循环往复<br>            系统定时器一般用于操作系统，用于产生时基，维持操作系统的心跳<br>            SysTick—系统定时有 4 个寄存器：<br>                    CTRL SysTick    控制及状态寄存器<br>                    LOAD SysTick    重装载数值寄存器<br>                    VAL SysTick     当前数值寄存器<br>                    CALIB SysTick   校准数值寄存器</p>
+<pre><code>    配置SysTick—系统定时器：    
+        1、设置重装载寄存器的值
+        2、清除当前数值寄存器的值
+        3、配置控制与状态寄存器
+    SysTick 配置库函数：
+        __STATIC_INLINE uint32_t SysTick_Config(uint32_t ticks)
+        &#123;
+        // 不可能的重装载值，超出范围
+        if ((ticks - 1UL) &gt; SysTick_LOAD_RELOAD_Msk) &#123;
+        return (1UL);
+        &#125;
+        // 设置重装载寄存器
+        SysTick-&gt;LOAD = (uint32_t)(ticks - 1UL);
+        // 设置中断优先级
+        NVIC_SetPriority (SysTick_IRQn, (1UL &lt;&lt; __NVIC_PRIO_BITS) - 1UL);
+        // 设置当前数值寄存器
+        SysTick-&gt;VAL = 0UL;
+        // 设置系统定时器的时钟源为 AHBCLK=168M
+        // 使能系统定时器中断
+        // 使能定时器
+        SysTick-&gt;CTRL = SysTick_CTRL_CLKSOURCE_Msk |
+        SysTick_CTRL_TICKINT_Msk |
+        SysTick_CTRL_ENABLE_Msk;
+        return (0UL);
+        &#125;
+</code></pre>
+
+      <div class="tags">
+          <a href="/tags/STM32-HAL/" rel="tag"><i class="ic i-tag"></i> STM32_HAL</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2021-08-01 13:49:56" itemprop="dateModified" datetime="2021-08-01T13:49:56+08:00">2021-08-01</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> Donate</button>
+  <p>Give me a cup of [coffee]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="~元~ WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="~元~ Alipay">
+        <p>Alipay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="~元~ PayPal">
+        <p>PayPal</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>~元~ <i class="ic i-at"><em>@</em></i>天元の
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="https://github.com/yuanyiyuan/yuanyiyuan.github.io.git/HAL/" title="HAL">https://github.com/yuanyiyuan/yuanyiyuan.github.io.git/HAL/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/STM32CubeMx%E7%A7%BB%E6%A4%8Dfinsh%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giph4baakhj20zk0m8h5q.jpg" title="STM32CubeMx移植RT-Thread的RTOS和finsh步骤和解决办法">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>STM32CubeMx移植RT-Thread的RTOS和finsh步骤和解决办法</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/arduino%E7%AC%94%E8%AE%B0/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciszlczyj20zk0m816d.jpg" title="arduino常见的库及其使用">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>arduino常见的库及其使用</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%8B%E5%90%8E%E4%BF%AE%E6%94%B9"><span class="toc-number">1.</span> <span class="toc-text">之后修改</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="~元~"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">~元~</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">11</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">5</span>
+        <span class="name">tags</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <a href="https://github.com/yuanyiyuan" title="https:&#x2F;&#x2F;github.com&#x2F;yuanyiyuan" class="item github"><i class="ic i-github"></i></a>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;twitter.com&#x2F;yourname"><i class="ic i-twitter"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yourname"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTE5ODc4NTU1NDQ=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1987855544"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20veW91cm5hbWU=" title="https:&#x2F;&#x2F;weibo.com&#x2F;yourname"><i class="ic i-weibo"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;about.me&#x2F;yourname"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>About</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>Posts</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>Archives</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>Categories</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>Tags</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/STM32CubeMx%E7%A7%BB%E6%A4%8Dfinsh%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/arduino%E7%AC%94%E8%AE%B0/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/arduino%E7%AC%94%E8%AE%B0/" title="arduino常见的库及其使用">arduino常见的库及其使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Vscode%20quick/" title="VScode 快捷键">VScode 快捷键</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/LINUX%E7%AF%87/" title="LINUX篇">LINUX篇</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/HAL/" title="HAL">HAL</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/RT-thread__2/" title="RT-thread__2">RT-thread__2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/C%E8%AF%AD%E8%A8%80%E4%B9%8B%E8%BF%9B%E9%98%B6/" title="C语言之进阶">C语言之进阶</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/C%E8%AF%AD%E8%A8%80/" title="C语言">C语言</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/STM32CubeMx%E7%A7%BB%E6%A4%8Dfinsh%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" title="STM32CubeMx移植RT-Thread的RTOS和finsh步骤和解决办法">STM32CubeMx移植RT-Thread的RTOS和finsh步骤和解决办法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/OpenMv%E7%AC%94%E8%AE%B0/" title="OpenMv笔记">OpenMv笔记</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2021</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">~元~ @ Tian yuan</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<a href="https://github.com/amehime/hexo-theme-shoka">Shoka</a>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'HAL/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,641 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="天元の" href="https://github.com/yuanyiyuan/yuanyiyuan.github.io.git/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="天元の" href="https://github.com/yuanyiyuan/yuanyiyuan.github.io.git/atom.xml" />
+<link rel="alternate" type="application/json" title="天元の" href="https://github.com/yuanyiyuan/yuanyiyuan.github.io.git/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="openmv" />
+
+
+<link rel="canonical" href="https://github.com/yuanyiyuan/yuanyiyuan.github.io.git/OpenMv%E7%AC%94%E8%AE%B0/">
+
+
+
+  <title>
+OpenMv笔记 |
+Tian yuan = 天元の = 宇宙中的每一粒尘埃都有着迷人的故事</title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">OpenMv笔记
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2021-07-27 15:38:31">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-07-27T15:38:31+08:00">2021-07-27</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Tian yuan</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giciszlczyj20zk0m816d.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclhnx9glj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/005Q2GK3ly8gs18udbaisj31hc0u0dpo.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipesx5fdwj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipewkhf1zj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipexw3o58j20zk0m8e81.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="https://github.com/yuanyiyuan/yuanyiyuan.github.io.git/OpenMv%E7%AC%94%E8%AE%B0/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="~元~">
+    <meta itemprop="description" content="宇宙中的每一粒尘埃都有着迷人的故事, ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="天元の">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>一. 感光元件 &lt;核心&gt;：</p>
+<pre><code>import sensor    //感光元件模块 ---&gt; 用于设置感光元件的参数
+sensor.reset()   //初始化感光元件
+sensor.set_pixformat()  //设置像素模式
+    |--&gt;  sensor.GRAYSCALE //灰度，每个像素8bit
+    |--&gt;  sensor.RGB565    //彩色，每个像素16bit
+sensor.set_framesize()  //设置图像的大小
+    常见的图像大小： VGA: 640x480 | QVGA: 320x240 ...  SIF: 352x240 | QSIF: 176x120 ... CIF: 352x288 ...前面每加一个Q ，各个值除以2
+sensor.skip_frames(n)  //跳过n张照片，在更改设置后，跳过一些帧，等待感光元件变稳定
+</code></pre>
+<p> !! sensor.snapshot()      //拍摄一张照片，返回一个image对象<br>    sensor.set_auto_gain() //自动增益开启（True）或者关闭（False）        [在使用颜色追踪时，需要关闭自动增益]<br>    sensor.set_auto_whitebal()  //自动白平衡开启（True）或者关闭（False） [在使用颜色追踪时，需要关闭自动白平衡]<br> !! sensor.set_auto_exposure(enable[, exposure_us])<br>            |–&gt;  enable 打开（True）或关闭（False）自动曝光  (默认打开)<br>                |–&gt; 如果 enable 为False，则可以用 exposure_us 设置一个固定的曝光时间（以微秒为单位）<br>    sensor.set_windowing(roi)  //处理图像中要提取出的处理的区域<br>        |–&gt; roi 的格式是 (x,y,w,h)<br>            |–&gt;<br>            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~·<br>            x:ROI区域中左上角的x坐标<br>            y:ROI区域中左上角的y坐标<br>            w:ROI的宽度<br>            h:ROI的高度<br>            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~·<br>    sensor.set_hmirror(True)   //水平方向翻转<br>    sensor.set_vflip(True)     //垂直方向翻转</p>
+<p>二. 图像信息的返回</p>
+<p>—–像素点<br> !! image.get_pixel(x,y)  //获取一个像素点的值<br>            |–&gt;  对于灰度图: 返回(x,y)坐标的灰度值 / 对于彩色图: 返回(x,y)坐标的(r,g,b)的tuple<br> !! image.set_pixel(x, y, pixel)  //设置一个像素点的值<br>            |–&gt;  对于灰度图: 设置(x,y)坐标的灰度值 / 对于彩色图: 设置(x,y)坐标的(r,g,b)的值<br>—–图像<br> !! image.width()      //返回图像的宽度(像素)<br> !! image.height()     //返回图像的高度(像素)<br>    image.format()     //灰度图会返回 sensor.GRAYSCALE，彩色图会返回 sensor.RGB565<br>    image.size()       //返回图像的大小(byte)<br>—–图像运算<br>    image.invert()     //取反，对于二值化的图像，0(黑)变成1(白)，1(白)变成0(黑)<br>        image.nand(image)  //与另一个图片进行与非（NAND）运算<br>        image.nor(image)   //与另一个图片进行或非（NOR）运算<br>        xor –&gt; 异或    xnor –&gt; 异或非<br>    image.difference(image)    //从这张图片减去另一个图片   [用来做移动检测]</p>
+<pre><code>······································································
+LAB三个通道：
+    平均数，中位数，众数，标准差，最小值，最大值，第一四分数，第三四分数
+    mean   median  mode  stdev   min    max       lq         uq
+image.get_statistics()   //统计区域内的图像信息
+    eg:
+    statistics=img.get_statistics(roi=ROI)
+    color_l=statistics.l_mode()    //众数
+······································································
+</code></pre>
+<p>三. 画图<br>        画线：   image.draw_line(line_tuple, color=White)   //在图像中画一条直线<br>                    |–&gt; line_tuple的格式是(x0, y0, x1, y1)，意思是(x0, y0)到(x1, y1)的直线<br>                    |–&gt; color 可以是灰度值(0-255)，或者是彩色值(r, g, b)的tupple<br>        画框：   image.draw_rectangle(rect_tuple, color=White)   //在图像中画一个矩形框<br>                    |–&gt; rect_tuple 的格式是 (x, y, w, h)<br>        画圆：   image.draw_circle(x, y, radius, color=White)    //在图像中画一个圆<br>                    |–&gt; x,y是圆心坐标  /  radius是圆的半径<br>        画十字： image.draw_cross(x, y, size=5, color=White)     //在图像中画一个十字<br>                    |–&gt; x,y是坐标    /  size是两侧的尺寸<br>        写字：   image.draw_string(x, y, text, color=White)      //在图像中写字 8x10的像素<br>                    |–&gt; x,y是坐标。使用\n, \r, and \r\n会使光标移动到下一行<br>                    |–&gt; text是要写的字符串</p>
+<p>四. 色块的选择<br>        image.find_blobs(thresholds,          // thresholds是颜色的阈值 –&gt; 此参数是一个列表，可以包含多个颜色<br>                        roi=Auto,             // roi为要提取的区域<br>                        x_stride=2,           // 要查找捕捉的色块的x方向上最小宽度的像素  &lt;可用来筛选所需的物体&gt;<br>                        y_stride=1,           // 要查找捕捉的色块的y方向上最小宽度的像素  &lt;可用来筛选所需的物体&gt;<br>                        invert=False,         // 反转阈值:  把阈值以外的颜色作为阈值进行查找<br>                        area_threshold=10,    // 面积阈值:  如果色块被框起来的面积小于这个值，会被过滤掉<br>                        pixels_threshold=10,  // 像素个数阈值，如果色块像素数量小于这个值，会被过滤掉<br>                        merge=False,          // 合并   [会合并所有的blob,无论是什么颜色]<br>                        margin=0,             // 边界   [如果间距为0一个像素点，也会被合并]<br>                        threshold_cb=None,<br>                        merge_cb=None)<br>            在返回的色块对象blob可以调用code方法，来判断是什么颜色的色块<br>            eg:<br>                img=sensor.snapshot()<br>                red_blobs = img.find_blobs([red])<br>    一个颜色阈值的结构:   xxx = (minL, maxL, minA, maxA, minB, maxB)<br>    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">blob色块对象:</span><br><span class="line">       blob 的多个方法： </span><br><span class="line">            blob.rect() 返回这个色块的外框——矩形元组(x, y, w, h)，可以直接在image.draw_rectangle中使用。</span><br><span class="line"></span><br><span class="line">            blob.x() 返回色块的外框的x坐标（int）</span><br><span class="line"></span><br><span class="line">            blob.y() 返回色块的外框的y坐标（int）</span><br><span class="line"></span><br><span class="line">            blob.w() 返回色块的外框的宽度w（int）</span><br><span class="line"></span><br><span class="line">            blob.h() 返回色块的外框的高度h（int）</span><br><span class="line"></span><br><span class="line">            blob.pixels() 返回色块的像素数量（int）</span><br><span class="line"></span><br><span class="line">            blob.cx() 返回色块的外框的中心x坐标（int）</span><br><span class="line"></span><br><span class="line">            blob.cy() 返回色块的外框的中心y坐标（int）</span><br><span class="line"></span><br><span class="line">            blob.rotation() 返回色块的旋转角度（单位为弧度）（float）</span><br><span class="line">                        |--&gt; 如果色块类似一个铅笔，那么这个值为0~180°。如果色块是一个圆，那么这个值是无用的。如果色块完全没有对称性，那么你会得到0~360°</span><br><span class="line">            blob.code() 返回一个16bit数字  --&gt;  用于查找颜色代码</span><br><span class="line">                        |--&gt; red的code为 0001 ；blue的code为 0011</span><br><span class="line">            blob.count()  返回的为blob的数量</span><br><span class="line">            blob.area()   返回色块的外框的面积</span><br><span class="line">            blob.density()   返回色块的密度    //为色块的像素数除以外框的区域</span><br><span class="line"></span><br></pre></td></tr></table></figure><br>五. 图像常用功能<br>    模板匹配（find_template）:<br>       |-&gt; 采用的是ncc算法，只能匹配与模板图片大小和角度基本一致的图案<br>    首先：加载模板图片 –&gt;  template = image.Image(“/xxx.pgm”)    // 模板图片为pgm<br>    其次：图片与模板图片对比 –&gt; find_template(template, threshold, [roi, step, search])<br>            eg:<br>                img.find_template(template, 0.70, roi=(10,0,60,60), step=4, search=SEARCH_EX)<br>                    |–&gt;  threshold的0.7是相似度阈值<br>                    |–&gt;  roi是进行匹配的区域（左上顶点为（10，0），长60宽60的矩形）      [roi的大小要比模板图片大]<br>    特征点检测（find_keypoint）: 首先例程提取最开始的图像作为目标物体特征，然后kpts保存目标物体的特征 —&gt; 默认会匹配目标特征的多种比例大小和角度<br>            eg:<br>                kpts = None      //定义一个kpts保存目标物体的特征<br>                    // kpts1 = image.load_descriptor(“/desc.orb”) //导入特征【不建议】<br>                kpts = img.find_keypoints(max_keypoints=150, threshold=10, scale_factor=1.2)<br>                    // image.find_keypoints(roi=Auto, threshold=20, normalized=False, scale_factor=1.5, max_keypoints=100, corner_detector=CORNER_AGAST) 原函数<br>                            |–&gt; roi表示识别的区域，是一个元组（x,y,w,h）,默认与framsesize大小一致<br>                            |–&gt; threshold是0~255的一个阈值，用来控制特征点检测的角点数量  &lt;阈值越低，获得的角点越多&gt;<br>                            |–&gt; normalized是一个布尔数值，默认是False，可以匹配目标特征的多种大小（比ncc模版匹配效果灵活）。如果设置为True，关闭特征点检测的多比例结果，仅匹配<br>                            |                             目标特征的一种大小（类似于模版匹配），但是运算速度会更快一些<br>                            |–&gt; scale_factor是一个大于1.0的浮点数。这个数值越高，检测速度越快，但是匹配准确率会下降<br>                            |–&gt; max_keypoints是一个物体可提取的特征点的最大数量<br>                            |–&gt; corner_detector是特征点检测采取的算法，默认是AGAST算法, FAST算法会更快但是准确率会下降<br>                match = image.match_descriptor(kpts, kpts2, threshold=85)    //kpt和kpt2的匹配的近似特征点数目<br>                    // image.match_descriptor(descritor0, descriptor1, threshold=70, filter_outliers=False)。本函数返回kptmatch对象<br>                            |–&gt; threshold阈值设置匹配的准确度，用来过滤掉有歧义的匹配。这个值越小，准确度越高<br>                            |–&gt; filter_outliers默认关闭<br>    测量距离：   距离 = 一个常数/直径的像素  –&gt; [实际长度和摄像头里的像素成反比]</p>
+<pre><code>        eg:     length = K/Lm     //Lm 为直径的像素
+扫码：    img.lens_corr   //来矫正 QR码、二维码的畸变
+         img.find_barcodes()    //检测出条形码的信息
+         img.find_qrcodes()     //检测出二维码的信息
+保存截取到的图片到SD卡：
+        sensor.snapshot().save(&quot;singtown/s%s/%s.pgm&quot; % (num, n) )    //# or &quot;example.bmp&quot; (or others)
+            // 先在OpenMV的U盘里新建一个文件夹，命名为singtown
+检测人脸：
+            d0 = img.find_lbp((0, 0, img.width(), img.height()))
+            // d0为当前人脸的lbp特征
+计算帧率： clock.fps()
+</code></pre>
+<p>六. 板载pyb外设<br>        时间：<br>            延时函数：    pyb.delay(50) # 延时 50 毫秒<br>            获取时间函数：            pyb.millis() # 获取从启动开始计时的毫秒数<br>            rtc实时时钟：<br>                from pyb import RTC<br>                rtc = RTC()<br>                rtc.datetime((2021, 7, 28, 2, 0, 0, 0, 0))<br>        LED：<br>            from pyb import LED<br>            led = LED(1)     # 红led    1–&gt;红  2–&gt;绿  3–&gt;蓝  4–&gt;红外<br>            led.toggle()     #翻转<br>            led.on()#亮<br>            led.off()#灭<br>        IO：<br>            from pyb import Pin<br>            p_out = Pin(‘P7’, Pin.OUT_PP)  #设置p_out为输出引脚<br>            p_out.high()     #设置p_out引脚为高<br>            p_out.low()      #设置p_out引脚为低<br>            p_in = Pin(‘P7’, Pin.IN, Pin.PULL_UP)     #设置p_in为输入引脚，并开启上拉电阻<br>            value = p_in.value()      # get value, 0 or 1#读入p_in引脚的值<br>        IO中断：<br>            from pyb import Pin, ExtInt<br>            callback = lambda e: print(“intr”)<br>            ext = ExtInt(Pin(‘P7’), ExtInt.IRQ_RISING, Pin.PULL_NONE, callback)<br>        定时器：<br>            from pyb import Timer<br>            tim = Timer(4, freq=1000)       #定时器4，频率为1000Hz   —&gt;   使用定时器4创建定时器对象-以1000Hz触发 [1000Hz为总数]<br>            tim.counter()     # 获取定时器的值<br>            tim.freq(0.5)     # 0.5 Hz<br>            tim.callback(lambda t: pyb.LED(1).toggle())       # 回调函数，回调设置为  lambda t: pyb.LED(1).toggle()  函数<br>                ***********************************<br>                    Timer 1 Channel 3 Negative -&gt; P0<br>                    Timer 1 Channel 2 Negative -&gt; P1<br>                    Timer 1 Channel 1 Negative -&gt; P2<br>                    Timer 2 Channel 3 Positive -&gt; P4<br>                    Timer 2 Channel 4 Positive -&gt; P5<br>                    Timer 2 Channel 1 Positive -&gt; P6<br>                    Timer 4 Channel 1 Negative -&gt; P7<br>                    Timer 4 Channel 2 Negative -&gt; P8<br>                ***********************************<br>        PWM：<br>            from pyb import Pin, Timer<br>            p = Pin(‘P7’)      # P7 has TIM4, CH1<br>            tim = Timer(4, freq=1000)     #定时器4，频率为1000Hz   —&gt; 生成1kHZ方波<br>            ch = tim.channel(1, Timer.PWM, pin=p)<br>            ch.pulse_width_percent(50)    #占空比<br>        ADC：<br>            from pyb import Pin, ADC<br>            adc = ADC(‘P6’)<br>            adc.read()       # read value, 0-4095            12bit -&gt; ADC<br>        DAC：<br>            from pyb import Pin, DAC<br>            dac = DAC(‘P6’)<br>            dac.write(120)   # output between 0 and 255<br>        UART：<br>            from pyb import UART</p>
+<pre><code>        uart = UART(3, 9600)        #  UART 3 RX -&gt; P5 (PB11)  \  UART 3 TX -&gt; P4 (PB10)  \  UART 1 RX -&gt; P0 (PB15)  \  UART 1 TX -&gt; P1 (PB14)
+        string = &quot;hello string!&quot;
+        uart.write(string)
+        uart.write(&#39;hello&#39;)
+        uart.read(5)    # read up to 5 byte
+    SPI:
+        from pyb import SPI
+        spi = SPI(2, SPI.MASTER, baudrate=200000, polarity=1, phase=0)       #baudrate:波特率
+        spi.send(&#39;hello&#39;)
+        spi.recv(5)       # receive 5 bytes on the bus
+        spi.send_recv(&#39;hello&#39;)      # send a receive 5 bytes
+    I2C:
+        from machine import I2C, Pin
+        i2c = I2C(sda=Pin(&#39;P5&#39;),scl=Pin(&#39;P4&#39;))
+
+        i2c.scan()
+        i2c.writeto(0x42, b&#39;123&#39;)         # write 3 bytes to slave with 7-bit address 42
+        i2c.readfrom(0x42, 4)             # read 4 bytes from slave with 7-bit address 42
+
+        i2c.readfrom_mem(0x42, 8, 3)      # read 3 bytes from memory of slave 42,
+                                        # starting at memory-address 8 in the slave
+        i2c.writeto_mem(0x42, 2, b&#39;\x10&#39;) # write 1 byte to memory of slave 42
+                                        # starting at address 2 in the slave
+    Servo(舵机)：
+        from pyb import Servo
+
+        s1 = Servo(1)        # servo on position 1 (P7)       Servo(1) -&gt; P7 (PD12)  |  Servo(2) -&gt; P8 (PD13)
+        s1.angle(45)         # move to 45 degrees
+        s1.angle(-60, 1500)  # move to -60 degrees in 1500ms
+        s1.speed(50)         # for continuous rotation servos
+</code></pre>
+<p>七. 拓展<br>    LCD：<br>        import lcd<br>        lcd.init()        # Initialize the lcd screen.<br>        lcd.display(sensor.snapshot()) # Take a picture and display the image.    #将图像显示在lcd中<br>    WiFi：<br>        import network(网络) , usocket(套接字[协议的产物]) , sys ,  json ，requests</p>
+<pre><code>    SSID =&#39;OPENMV_AP&#39;    # Network SSID
+    KEY  =&#39;1234567890&#39;    # Network key (must be 10 chars)
+    HOST = &#39;&#39;           # Use first available interface
+    PORT = 8080         # Arbitrary non-privileged port
+
+    /*在 AP 模式下初始化 WLAN 模块*/
+    wlan = network.WINC(mode=network.WINC.MODE_AP)
+    wlan.start_ap(SSID, key=KEY, security=wlan.WEP, channel=2)
+    client, addr = s.accept()   //接收客户端的地址
+    /*将客户端套接字超时设置为 2 秒*/
+    client.settimeout(2.0)
+    print (&#39;Connected to &#39; + addr[0] + &#39;:&#39; + str(addr[1]))   //打印地址信息
+    /*客户端读取请求*/
+    data = client.recv(1024)  
+    /*解析请求*/
+    /*发送多部分标头*/           ---------发送坐标json                     |           ------------发送图片
+        client.send(&quot;HTTP/1.1 200 OK\r\n&quot; \                              |      client.send(&quot;HTTP/1.1 200 OK\r\n&quot; \
+                   &quot;Server: OpenMV\r\n&quot; \                                |                  &quot;Server: OpenMV\r\n&quot; \
+                   &quot;Content-Type: application/json\r\n&quot; \                |                  &quot;Content-Type: image/jpeg\r\n\r\n&quot;)
+                   &quot;Cache-Control: no-cache\r\n&quot; \
+                   &quot;Pragma: no-cache\r\n\r\n&quot;)
+    /*每秒帧数时钟*/
+    clock = time.clock()
+                                                                        |   在发送图片中加入的代码
+                                                                            frame = sensor.snapshot()
+                                                                            cframe = frame.compressed(quality=35)
+                                                                            client.send(cframe)
+                                                                            client.close()
+    /* 创建服务器套接字*/
+     s = usocket.socket(usocket.AF_INET, usocket.SOCK_STREAM)
+     try:
+    /*绑定并监听*/
+    s.bind([HOST, PORT])
+    s.listen(5)
+    /*设置服务器套接字超时*/
+    s.settimeout(3)
+    response(s)
+except OSError as e:
+    s.close()  
+    print(&quot;socket error: &quot;, e)      #sys.print_exception(e)
+    /*GET 192.168.1.1:8080来看json数据*/
+    r = requests.get(&#39;192.168.1.1:8080&#39;)
+</code></pre>
+<p>八. 奇奇怪怪<br>        gif录制动图：<br>        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">import sensor, image, time, gif, pyb</span><br><span class="line"></span><br><span class="line">sensor.reset()   # 初始化sensor</span><br><span class="line">sensor.set_pixformat(sensor.RGB565)   # or sensor.GRAYSCALE</span><br><span class="line">#设置图像色彩格式，有RGB565色彩图和GRAYSCALE灰度图两种</span><br><span class="line"></span><br><span class="line">sensor.set_framesize(sensor.QQVGA) # or sensor.QVGA (or others)</span><br><span class="line">#设置图像像素大小</span><br><span class="line"></span><br><span class="line">sensor.skip_frames(time = 2000) # 让新的设置生效</span><br><span class="line">clock = time.clock() # 跟踪FPS帧率</span><br><span class="line"></span><br><span class="line">sensor.skip_frames(30) # Give the user time to get ready.</span><br><span class="line">#程序开始时，先等待30帧图像，让用户有时间准备</span><br><span class="line"></span><br><span class="line">g = gif.Gif(&quot;example.gif&quot;, loop=True)</span><br><span class="line">#gif.Gif(filename, width=Auto, height=Auto, color=Auto, loop=True)创建一个gif对象，filename为保存gif动图的文件路径</span><br><span class="line"></span><br><span class="line">print(&quot;You&#x27;re on camera!&quot;)</span><br><span class="line">for i in range(100):</span><br><span class="line">    clock.tick()</span><br><span class="line">        # clock.avg()返回帧与帧之间的毫秒数，其中包含gif延迟</span><br><span class="line">    g.add_frame(sensor.snapshot(), delay=10)   # centiseconds.</span><br><span class="line">        #gif.add_frame(image, delay=10),向gif动图中添加图片，delay＝10指每隔</span><br><span class="line">        #10分秒添加一张图。</span><br><span class="line">    print(clock.fps())</span><br><span class="line"></span><br><span class="line">g.close()</span><br><span class="line">print(&quot;Done! Reset the camera to see the saved recording.&quot;)</span><br></pre></td></tr></table></figure></p>
+<pre><code>    人脸追踪例程： 检测到的人脸。 该脚本的第一部分使用前面Haar Cascade在图像中找到一张脸。 之后，脚本使用关键点功能自动学习你的脸并跟踪它。 关键点可以用来自动追踪任何东西
+    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">import sensor, time, image</span><br><span class="line"></span><br><span class="line"># Reset sensor</span><br><span class="line">sensor.reset()</span><br><span class="line">sensor.set_contrast(3)</span><br><span class="line">sensor.set_gainceiling(16)</span><br><span class="line">sensor.set_framesize(sensor.VGA)</span><br><span class="line">sensor.set_windowing((320, 240))</span><br><span class="line">sensor.set_pixformat(sensor.GRAYSCALE)</span><br><span class="line"></span><br><span class="line"># 跳过几帧，让感光元件稳定下来，使设置生效</span><br><span class="line">sensor.skip_frames(time = 2000)</span><br><span class="line"></span><br><span class="line"># 加载Haar算子</span><br><span class="line"># 默认情况下，这将使用所有阶段，较低的阶段更快但不太准确。</span><br><span class="line">face_cascade = image.HaarCascade(&quot;frontalface&quot;, stages=25)</span><br><span class="line">print(face_cascade)</span><br><span class="line"></span><br><span class="line"># First set of keypoints</span><br><span class="line"># 第一组关键点</span><br><span class="line">kpts1 = None</span><br><span class="line"></span><br><span class="line"># Find a face!</span><br><span class="line"># 找一张脸!</span><br><span class="line">while (kpts1 == None):</span><br><span class="line">    img = sensor.snapshot()</span><br><span class="line">    img.draw_string(0, 0, &quot;Looking for a face...&quot;)</span><br><span class="line">    # Find faces</span><br><span class="line">    objects = img.find_features(face_cascade, threshold=0.5, scale=1.25)</span><br><span class="line">    if objects:</span><br><span class="line">        # 在每个方向上将ROI扩大31个像素</span><br><span class="line">        face = (objects[0][0]-31, objects[0][1]-31,objects[0][2]+31*2, objects[0][3]+31*2)</span><br><span class="line">        # 使用检测面大小作为ROI提取关键点</span><br><span class="line">        kpts1 = img.find_keypoints(threshold=10, scale_factor=1.1, max_keypoints=100, roi=face)</span><br><span class="line">        # 在第一个人脸周围画一个矩形</span><br><span class="line">        img.draw_rectangle(objects[0])</span><br><span class="line"></span><br><span class="line"># Draw keypoints</span><br><span class="line">print(kpts1)</span><br><span class="line">img.draw_keypoints(kpts1, size=24)</span><br><span class="line">img = sensor.snapshot()</span><br><span class="line">time.sleep_ms(2000)</span><br><span class="line"></span><br><span class="line"># FPS clock</span><br><span class="line">clock = time.clock()</span><br><span class="line"></span><br><span class="line">while (True):</span><br><span class="line">    clock.tick()</span><br><span class="line">    img = sensor.snapshot()</span><br><span class="line">    # 从整个帧中提取关键点</span><br><span class="line">    kpts2 = img.find_keypoints(threshold=10, scale_factor=1.1, max_keypoints=100, normalized=True)</span><br><span class="line"></span><br><span class="line">    if (kpts2):</span><br><span class="line">        # 将第一组关键点与第二组关键点匹配</span><br><span class="line">        c=image.match_descriptor(kpts1, kpts2, threshold=85)</span><br><span class="line">        match = c[6] # C[6] contains the number of matches. C[6]包含匹配的数量。</span><br><span class="line">        if (match&gt;5):</span><br><span class="line">            img.draw_rectangle(c[2:6])</span><br><span class="line">            img.draw_cross(c[0], c[1], size=10)</span><br><span class="line">            print(kpts2, &quot;matched:%d dt:%d&quot;%(match, c[7]))</span><br><span class="line"></span><br><span class="line">    # Draw FPS</span><br><span class="line">    img.draw_string(0, 0, &quot;FPS:%.2f&quot;%(clock.fps()))</span><br></pre></td></tr></table></figure>
+&lt;&lt;&lt;里面包含的库不全，用到其余的到官网API查询&gt;&gt;&gt;
+&lt;&lt;&lt;对于图像的滤波处理，边缘处理、双边滤波...  用到去官网API查询&gt;&gt;&gt; 
+https://book.openmv.cc/
+file:///C:/Users/Asus/AppData/Roaming/OpenMV/qtcreator/html/library/index.html   
+
+
+
+
+   
+</code></pre>
+
+      <div class="tags">
+          <a href="/tags/openmv/" rel="tag"><i class="ic i-tag"></i> openmv</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2021-07-29 15:24:23" itemprop="dateModified" datetime="2021-07-29T15:24:23+08:00">2021-07-29</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> Donate</button>
+  <p>Give me a cup of [coffee]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="~元~ WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="~元~ Alipay">
+        <p>Alipay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="~元~ PayPal">
+        <p>PayPal</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>~元~ <i class="ic i-at"><em>@</em></i>天元の
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="https://github.com/yuanyiyuan/yuanyiyuan.github.io.git/OpenMv%E7%AC%94%E8%AE%B0/" title="OpenMv笔记">https://github.com/yuanyiyuan/yuanyiyuan.github.io.git/OpenMv笔记/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/RT-thread__2/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicivghyooj20zk0m8dir.jpg" title="RT-thread__2">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>RT-thread__2</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/STM32CubeMx%E7%A7%BB%E6%A4%8Dfinsh%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipesng5oej20zk0m87d4.jpg" title="STM32CubeMx移植RT-Thread的RTOS和finsh步骤和解决办法">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>STM32CubeMx移植RT-Thread的RTOS和finsh步骤和解决办法</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+      </div>
+      <div class="related panel pjax" data-title="Related">
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="~元~"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">~元~</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">11</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">5</span>
+        <span class="name">tags</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <a href="https://github.com/yuanyiyuan" title="https:&#x2F;&#x2F;github.com&#x2F;yuanyiyuan" class="item github"><i class="ic i-github"></i></a>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;twitter.com&#x2F;yourname"><i class="ic i-twitter"></i></span>
+      <span class="exturl item zhihu" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3Blb3BsZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;yourname"><i class="ic i-zhihu"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTE5ODc4NTU1NDQ=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1987855544"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item weibo" data-url="aHR0cHM6Ly93ZWliby5jb20veW91cm5hbWU=" title="https:&#x2F;&#x2F;weibo.com&#x2F;yourname"><i class="ic i-weibo"></i></span>
+      <span class="exturl item about" data-url="aHR0cHM6Ly9hYm91dC5tZS95b3VybmFtZQ==" title="https:&#x2F;&#x2F;about.me&#x2F;yourname"><i class="ic i-address-card"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>About</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>Posts</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>Archives</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>Categories</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>Tags</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/RT-thread__2/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/STM32CubeMx%E7%A7%BB%E6%A4%8Dfinsh%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/STM32CubeMx%E7%A7%BB%E6%A4%8Dfinsh%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" title="STM32CubeMx移植RT-Thread的RTOS和finsh步骤和解决办法">STM32CubeMx移植RT-Thread的RTOS和finsh步骤和解决办法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/C%E8%AF%AD%E8%A8%80/" title="C语言">C语言</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/RT-thread__2/" title="RT-thread__2">RT-thread__2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/arduino%E7%AC%94%E8%AE%B0/" title="arduino常见的库及其使用">arduino常见的库及其使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/HAL/" title="HAL">HAL</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Vscode%20quick/" title="VScode 快捷键">VScode 快捷键</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/OpenMv%E7%AC%94%E8%AE%B0/" title="OpenMv笔记">OpenMv笔记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/C%E8%AF%AD%E8%A8%80%E4%B9%8B%E8%BF%9B%E9%98%B6/" title="C语言之进阶">C语言之进阶</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/LINUX%E7%AF%87/" title="LINUX篇">LINUX篇</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2021</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">~元~ @ Tian yuan</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<a href="https://github.com/amehime/hexo-theme-shoka">Shoka</a>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'OpenMv笔记/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
